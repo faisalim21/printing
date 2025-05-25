@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تذييل الصفحة - Printing</title>
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --text-dark: #1f2937;
+      --text-gray: #6b7280;
+      --bg-light: #f9fafb;
+      --border-light: #e5e7eb;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    footer {
+      background: var(--bg-light);
+      padding: 2.5rem 5%;
+      border-top: 1px solid var(--border-light);
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-blue);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+    }
+
+    @media (max-width: 600px) {
+      .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <footer>
+    <div class="footer-links">
+      <a href="#">سياسة الخصوصية</a>
+      <a href="#">الشروط والأحكام</a>
+      <a href="#">الدعم الفني</a>
+    </div>
+    <p class="copyright">
+      © 2025 منصة Printing - جميع الحقوق محفوظة.
+    </p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>رأس الصفحة - Printing</title>
+  <style>
+    :root {
+      --primary-blue: #3b82f6;
+      --light-blue: #93c5fd;
+      --text-white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-white);
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.9;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav {
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">📄</span>
+      <span>Printing</span>
+    </a>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="howto.html">كيفية الطلب</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+  </header>
+</body>
+</html>

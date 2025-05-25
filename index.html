@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>منصة الطباعة - Printing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --dark-blue: #1e40af;
+      --text-dark: #1f2937;
+      --text-gray: #6b7280;
+      --bg-white: #ffffff;
+      --light-blue: #e9f6ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: linear-gradient(to bottom, #e0f2ff, #f8fbff);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--primary-blue);
+      margin-bottom: 1.2rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .btn {
+      background-color: var(--primary-blue);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn:hover {
+      background-color: var(--dark-blue);
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 0.9rem 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- استدعاء الهيدر -->
+  <div id="header"></div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>منصتك الذكية لطباعة المستندات</h1>
+        <p>ابدأ الآن واطبع مستنداتك بجودة عالية وخطوات بسيطة.</p>
+        <button class="btn" onclick="startNow()">رفع الملف</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- استدعاء الفوتر -->
+  <div id="footer"></div>
+
+  <script>
+    // استدعاء الهيدر والفوتر تلقائيًا
+    async function loadComponents() {
+      try {
+        const header = await fetch("header.html");
+        document.getElementById("header").innerHTML = await header.text();
+
+        const footer = await fetch("footer.html");
+        document.getElementById("footer").innerHTML = await footer.text();
+      } catch (err) {
+        console.error("فشل تحميل المكونات:", err);
+      }
+    }
+
+    // زر رفع الملف
+    function startNow() {
+      alert("📁 سيتم رفع الملف والانتقال للخيارات...");
+    }
+
+    document.addEventListener("DOMContentLoaded", loadComponents);
+  </script>
+
+</body>
+</html>

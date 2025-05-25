@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>كيفية الطلب - Printing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-blue: #2563eb;
+      --dark-blue: #1e40af;
+      --text-dark: #1f2937;
+      --text-gray: #6b7280;
+      --bg-white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary-blue);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .step {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-right: 5px solid var(--primary-blue);
+      transition: background 0.3s ease;
+    }
+
+    .step:hover {
+      background: #e0f2ff;
+    }
+
+    .step h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark-blue);
+    }
+
+    .step p {
+      font-size: 1rem;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <main>
+    <h1>كيفية الطلب</h1>
+    <div class="steps">
+      <div class="step">
+        <h2>١. رفع الملف</h2>
+        <p>ابدأ برفع الملف الذي ترغب بطباعته من خلال الضغط على زر "رفع الملف" في الصفحة الرئيسية.</p>
+      </div>
+      <div class="step">
+        <h2>٢. تحديد المواصفات</h2>
+        <p>اختر نوع الطباعة (ملون أو أبيض وأسود)، وعدد النسخ، وحجم الورق المطلوب.</p>
+      </div>
+      <div class="step">
+        <h2>٣. إتمام الطلب</h2>
+        <p>راجع التفاصيل، ثم اضغط على "تأكيد الطلب"، وسيتم تجهيز الطلب في أقرب وقت.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadComponents() {
+      try {
+        const header = await fetch("header.html");
+        document.getElementById("header").innerHTML = await header.text();
+
+        const footer = await fetch("footer.html");
+        document.getElementById("footer").innerHTML = await footer.text();
+      } catch (err) {
+        console.error("فشل تحميل المكونات:", err);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadComponents);
+  </script>
+</body>
+</html>
